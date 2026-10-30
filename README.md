@@ -1,8 +1,8 @@
 # Awesome Vibe Tools Notes
 
-Personal reference for tools spotted in TikToks (Oct 2026). How & when to use them.
+Personal reference for tools spotted in TikToks (Oct 2026). How & when to use them. Pricing, availability, licenses, and hosted features can change; verify them before installing or relying on a tool.
 
-## 1. OpenCut — Free Open-Source CapCut Alternative
+## 1. OpenCut — Open-Source Video Editor
 
 **Repo (forked):** https://github.com/bimald986-cell/OpenCut  
 **Original:** https://github.com/OpenCut-app/OpenCut (~93k stars)  
@@ -10,7 +10,7 @@ Personal reference for tools spotted in TikToks (Oct 2026). How & when to use th
 **License:** MIT
 
 ### What it is
-Browser-based (and upcoming desktop/mobile) video editor. Fully free, no subscriptions, no paywalled features, no watermarks, privacy-first (videos stay on device).
+Browser-based video editor. The project README describes the classic editor as usable and the code as MIT-licensed. The Rust rewrite is still in progress. Local editing can avoid per-render AI fees, but do not assume planned MCP, headless, desktop/mobile, or batch features are already available.
 
 ### Current status
 Being rewritten from the ground up (Rust core + one codebase for web/desktop/mobile). Classic version is usable today. Rewrite brings:
@@ -157,6 +157,40 @@ Prompt pattern:
 
 ---
 
+## Cost, license, and safety checks (reviewed 31 Oct 2026)
+
+These are discovery notes, not a guarantee that a service is free, unlimited, or suitable for commercial use.
+
+- **Open-source code does not make inference free.** Model APIs, voice generation, video generation, hosting, storage, proxy traffic, and publishing integrations can still cost money.
+- Check the license separately for the application, model weights, custom nodes/plugins, TTS voices, datasets, fonts, and sample assets. A repository-level MIT label does not automatically license every dependency or model.
+- Check current API pricing, free-tier limits, rate limits, data retention, privacy terms, and commercial/redistribution rights before use.
+- Do not paste production credentials into an experiment. Keep publishing disabled and use local test media until a workflow has explicit approval.
+- “Unlimited free” is not a safe assumption. A local workflow can still consume hardware, storage, electricity, and model-download bandwidth.
+
+### Current tool fit
+
+| Tool | What the notes support | Cost or evidence caveat | Best fit |
+|---|---|---|---|
+| OpenCut | Open-source editor; README lists MIT. The classic editor is described as usable. | The MCP/headless/Rust rewrite features are planned, not verified as available. Check the current fork license and feature status. | Manual M&M clip assembly; do not design an autonomous pipeline around planned features. |
+| Haikei | Basic SVG/PNG generation is described as free. | Verify the current free-tier and export terms before commercial use. | Static backgrounds and simple visual assets. |
+| Manus.im | Full-stack builder with a credit-based model. | Credits are not unlimited free usage; deployment and generated services may have separate limits. | One-off prototype experiments only, not recurring autonomous work. |
+| Cult UI / Magic UI | Component libraries; notes list MIT. | Verify each fork's license, package dependencies, accessibility, and motion behavior. | Optional components for marketing pages, not critical POS workflows. |
+| Sol-Advisor | Plugin/orchestration code; notes list MIT. | The orchestrator still uses a configured model and its tokens/API may cost money. Tool permissions need review. | Workflow design reference; no automatic authority expansion. |
+| UI UX Pro Max | The fork's LICENSE is MIT; README describes a design-system skill with searchable styles and reasoning rules. | The skill code is free to inspect, but model-assisted generation still consumes whichever model service is configured. | Primary design-system brief and accessibility checklist for AstroLab and Sajilo. |
+| Emil Kowalski Skills | Animation and design-engineering guidance: design, animation review, animation vocabulary, and Apple motion principles. | License and current version should be checked before redistribution; model-assisted use can consume tokens. | Secondary animation review, with reduced-motion and performance checks. |
+| Kombai Gallery | Design References records it as a large interactive UI reference gallery. | A gallery is not a code library or a guaranteed code generator; verify current access and usage terms. | Visual reference for layouts, not a source of production components. |
+| OpenShorts | The fork's README describes a self-hosted MIT app and a local clip workflow using local models/Whisper. | Some features require BYO Gemini, ElevenLabs, or fal.ai keys; AI Shorts are listed at about $0.65–$2/video, hosted plans are paid, and a recent upstream commit describes a paid residential proxy path for YouTube downloads. It also supports direct social publishing. | Not an unlimited-free generator. Consider only the local clip path with local media and local models; keep AI actor generation, proxy use, and publishing disabled. |
+
+### Project fit
+
+- **Sajilo Retail:** Use UI UX Pro Max first to define a calm, accessible, data-dense design system. Use Kombai for dashboard/table/form references. Keep the POS flow fast, keyboard-friendly, high-contrast, and low-motion. Do not add a React component stack solely to use Magic UI or Cult UI; evaluate the existing frontend architecture first.
+- **AstroLab:** Use UI UX Pro Max for a consistent chart/profile/transit design system and Kombai for visual layout references. Keep ephemeris, house, and interpretation logic outside the presentation layer. Use animation guidance only for non-critical transitions and respect reduced-motion preferences.
+- **Mind & Mythos:** OpenCut is a reasonable manual editing candidate. Treat its future MCP/headless features as unverified until released. OpenShorts may help with local clipping, but its API-backed generation and YouTube proxy paths are not free.
+ 
+No tools were installed, no API credentials were used, and no media was generated during this review.
+
+---
+
 ## Quick Decision Guide
 
 | Need | Tool |
@@ -170,4 +204,4 @@ Prompt pattern:
 
 ---
 
-*Forked the open-source repos into this account so we can track them easily. Notes last updated: 2026-10-08.*
+*Forked the open-source repos into this account so we can track them easily. Tool and cost review updated: 2026-10-31.*
